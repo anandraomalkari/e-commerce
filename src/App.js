@@ -1,24 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import Footer from './component/footer/Footer';
+import Signin from './component/signinsingup/Signin';
+import Signup from './component/signinsingup/Signup';
+import HomePage from './component/homepage/HomePage';
+import ProductCart from './component/homepage/product/productdetails/ProductCart';
+import { Routes, Route } from "react-router-dom";
+import Cart from './component/cart/Cart';
+import ExoticFruitsandVeggiesDesc from '../src/component/productslist/fruitsandveggies/ExoticFruitsandVeggiesDesc'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/getproductone/:id" element={<ProductCart />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/exoticfruitsandveggiesdesc" element={<ExoticFruitsandVeggiesDesc />} />
+        /
+        {/* <Route path="/employee" element={<EmployeeDirect />} /> */}
+        {/* if user can click on any praticular product that product valid "id" available then that particular product detail show*/}
+      </Routes>
+    </>
   );
 }
 
